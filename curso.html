@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function verificarRespostas() {
+            const perguntas = document.querySelectorAll('.pergunta');
+            let todasRespondidas = true;
+            perguntas.forEach(pergunta => {
+                const respostas = pergunta.querySelectorAll('input[type="radio"]');
+                let respondida = false;
+                respostas.forEach(resposta => {
+                    if (resposta.checked) {
+                        respondida = true;
+                    }
+                });
+                if (!respondida) {
+                    todasRespondidas = false;
+                }
+            });
+            if (todasRespondidas) {
+                document.getElementById('resultado').style.display = 'block';
+            } else {
+                alert('Por favor, responda todas as perguntas.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste Vocacional</h1>
+        <form id="testeVocacional">
+            <div class="pergunta">
+                <p>1. Você gosta de trabalhar em equipe?</p>
+                <label><input type="radio" name="pergunta1" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta1" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>2. Você prefere atividades ao ar livre?</p>
+                <label><input type="radio" name="pergunta2" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta2" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>3. Você se considera uma pessoa criativa?</p>
+                <label><input type="radio" name="pergunta3" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta3" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>4. Você gosta de resolver problemas matemáticos?</p>
+                <label><input type="radio" name="pergunta4" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta4" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>5. Você prefere trabalhar em um ambiente estruturado?</p>
+                <label><input type="radio" name="pergunta5" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta5" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>6. Você gosta de ajudar outras pessoas?</p>
+                <label><input type="radio" name="pergunta6" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta6" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>7. Você prefere trabalhar com tecnologia?</p>
+                <label><input type="radio" name="pergunta7" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta7" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>8. Você gosta de aprender sobre novas culturas?</p>
+                <label><input type="radio" name="pergunta8" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta8" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>9. Você prefere trabalhar de forma independente?</p>
+                <label><input type="radio" name="pergunta9" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta9" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>10. Você gosta de resolver problemas complexos?</p>
+                <label><input type="radio" name="pergunta10" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta10" value="nao"> Não</label>
+            </div>
+            <button type="button" onclick="verificarRespostas()">Enviar</button>
+        </form>
+        <div id="resultado" style="display:none;">
+            <h2>Você pode gostar de cursar Direito!</h2>
+            <p>Parabéns! Você completou o teste vocacional.</p>
+        </div>
+    </div>
+</body>
+</html>

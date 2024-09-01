@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function verificarRespostas() {
+            const perguntas = document.querySelectorAll('.pergunta');
+            let todasRespondidas = true;
+            perguntas.forEach(pergunta => {
+                const respostas = pergunta.querySelectorAll('input[type="radio"]');
+                let respondida = false;
+                respostas.forEach(resposta => {
+                    if (resposta.checked) {
+                        respondida = true;
+                    }
+                });
+                if (!respondida) {
+                    todasRespondidas = false;
+                }
+            });
+            if (todasRespondidas) {
+                document.getElementById('resultado').style.display = 'block';
+            } else {
+                alert('Por favor, responda todas as perguntas.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste Vocacional</h1>
+        <form id="testeVocacional">
+            <div class="pergunta">
+                <p>1. Você prefere trabalhar em um ambiente dinâmico e em constante mudança?</p>
+                <label><input type="radio" name="pergunta1" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta1" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>2. Você se sente confortável em tomar decisões importantes sob pressão?</p>
+                <label><input type="radio" name="pergunta2" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta2" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>3. Você gosta de planejar e organizar eventos ou projetos complexos?</p>
+                <label><input type="radio" name="pergunta3" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta3" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>4. Você prefere trabalhar com dados e análises detalhadas?</p>
+                <label><input type="radio" name="pergunta4" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta4" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>5. Você se sente motivado ao ajudar outras pessoas a resolverem seus problemas?</p>
+                <label><input type="radio" name="pergunta5" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta5" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>6. Você gosta de aprender novas tecnologias e ferramentas?</p>
+                <label><input type="radio" name="pergunta6" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta6" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>7. Você prefere trabalhar de forma independente e ter controle sobre suas tarefas?</p>
+                <label><input type="radio" name="pergunta7" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta7" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>8. Você se sente confortável em falar em público e apresentar ideias?</p>
+                <label><input type="radio" name="pergunta8" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta8" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>9. Você gosta de trabalhar em projetos que envolvem criatividade e inovação?</p>
+                <label><input type="radio" name="pergunta9" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta9" value="nao"> Não</label>
+            </div>
+            <div class="pergunta">
+                <p>10. Você prefere um trabalho que ofereça estabilidade e segurança a longo prazo?</p>
+                <label><input type="radio" name="pergunta10" value="sim"> Sim</label>
+                <label><input type="radio" name="pergunta10" value="nao"> Não</label>
+            </div>
+            <button type="button" onclick="verificarRespostas()">Enviar</button>
+        </form>
+        <div id="resultado" style="display:none;">
+            <h2>Resultado do Teste</h2>
+            <p>Parabéns! Você completou o teste vocacional.</p>
+        </div>
+    </div>
+</body>
+</html>

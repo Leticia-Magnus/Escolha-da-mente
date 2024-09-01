@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Fundo preto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .panel {
+            background-color: #ffffff; /* Painel branco */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.6); /* Sombras brancas com efeito bloom */
+            text-align: center;
+        }
+
+        .button {
+            background-color: #000000; /* Botão preto */
+            color: #ffffff; /* Texto branco */
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <a href="curso.html" class="button">Curso</a> <!-- Botão leva para curso.html -->
+        <a href="graduaçao.html" class="button">Graduação</a> <!-- Botão leva para graduacao.html -->
+    </div>
+</body>
+</html>

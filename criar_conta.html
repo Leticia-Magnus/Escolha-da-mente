@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+    <link rel="stylesheet" href="criar_conta.css">
+</head>
+<body>
+        <h1>Registrar</h1>
+    <form id="registerForm">
+        <label for="newUsername">Nome de Usuário:</label>
+        <input type="text" id="newUsername" name="newUsername" required>
+        <label for="newEmail">Email:</label>
+        <input type="email" id="newEmail" name="newEmail" required>
+        <label for="newPassword">Senha:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+        <button type="submit">Criar</button>
+        <button onclick="window.location.href='principal.html'">Registrar</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
